@@ -1,50 +1,25 @@
 ---
-layout: index
-title: Error the page doesn't exist
-tagline: You're lost in the space of Fullit make your landing page a fullpage sliding tool usefull for web marketing. 404 error
-img : 1.jpg
-img-mobile : 1-mobile.jpg
-css: cover.css
-js: 
-keywords: gradient, html, css, landing page, jekyll, ruby, web marketing, advertising
-canonical: https://grads.github.io
+layout: default
+description: "你来到了没有知识的荒原 :("
+header-img: "images/404-bg.jpg"
+permalink: /404.html
 ---
-{% include JB/setup %}
-
-<div class="site-wrapper gradient">
 
 
-      <div class="site-wrapper-inner">
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading" id="tag-heading">
+					<h1>404</h1>
+					<span class="subheading">{{ page.description }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 
-
-        <div class="cover-container">
-
-
-
-          <div class="inner cover">
-			<div class="row vertical-align">
-			  <div class="col-md-6">
-	            <h1 class="cover-heading jumbotitle">This page doesn't exist!</h1>
-	            <p class="lead jumbotext">You're in the right place: <b>Grads</b>! But this page doesn't exist, maybe you're lost (404 error). Try to go back to home by the button below.</p>
-	            <p class="lead jumbotext">
-	              <a href="{{ BASE_PATH }}" class="btn btn-lg btn-default">Home buddy</a>
-	            </p>
-			  </div>
-			  <div class="col-md-6" style="align-content: center;">
-			  	<img src="{{ BASE_PATH }}/assets/img/404.gif" style="margin: auto;" class="img-responsive" alt="Error 404">
-			  </div>
-			</div>          	
-
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>This template is made by <a href="https://twitter.com/lantoniotrento">Antonio Trento</a>.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-</div>
+<script>
+	document.body.classList.add('page-fullscreen');
+</script>
