@@ -70,7 +70,7 @@ mv config.json config.json.bak # 后面将修改配置，先备份原config.json
     "accounts": [
     {
       "user": "myuser",
-      "pass": "vdozHgDffPw5fG7E"
+      "pass": "mypassword"
     }
     ]
 }
@@ -107,7 +107,21 @@ source /etc/profile
 
 ![](SwitchyOmega配置HTTP代理.png)
 
-### 7. 关闭v2ray
+### 7. Docker配置HTTP代理
+
+```shell
+vim /lib/systemd/system/docker.service
+[Service]
+Environment="HTTP_PROXY=http://myuser:mypassword@127.0.0.1:10809"
+Environment="HTTPS_PROXY=http://myuser:mypassword@127.0.0.1:10809"
+Environment="NO_PROXY=localhost,127.0.0.1,::1"
+
+# 保存后重启docker
+sudo systemctl daemon-reload 
+sudo systemctl restart docker
+```
+
+### 8. 关闭v2ray
 
 ```shell
 ps -ef | grep v2ray # 第二列为v2ray进程PID
